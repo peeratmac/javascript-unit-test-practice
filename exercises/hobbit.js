@@ -8,7 +8,12 @@ class Hobbit {
     this.old = false;
     this.hasRing = false;
     // this.hasRing = this.name == 'Samwise' || this.name === 'Frodo';
-    this.hasRing = this.name == 'Frodo';
+    // console.log(this.hasRing);
+    if (this.name == 'Frodo') {
+      this.hasRing = true;
+    }
+    // this.hasRing = this.name == 'Frodo';
+    // console.log(this.hasRing);
   }
 
   celebrateBirthday() {

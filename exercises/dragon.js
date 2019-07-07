@@ -1,5 +1,5 @@
 class Dragon {
-  constructor(name, rider, color, hungry, strong) {
+  constructor(name, rider, color) {
     this.name = name;
     this.rider = rider;
     this.color = color;

@@ -48,12 +48,20 @@ describe('Dragon', function() {
   });
 
   it('should be strong after working out 5 times', function() {
-    var dragon = new Dragon('Peerat');
-    dragon.workout();
-    dragon.workout();
-    dragon.workout();
-    dragon.workout();
-    dragon.workout();
-    assert.equal(dragon.strong, true);
+    var dragonX = new Dragon('Peerat');
+    var dragonY = new Dragon('Josh');
+    dragonX.workout();
+    dragonX.workout();
+    dragonX.workout();
+    dragonX.workout();
+    dragonY.workout();
+    dragonY.workout();
+    dragonY.workout();
+    dragonY.workout();
+    dragonY.workout();
+    assert.equal(dragonX.strong, false);
+    assert.equal(dragonY.strong, true);
+    console.log(dragonX.strong);
+    console.log(dragonY.strong);
   });
 });
