@@ -1,9 +1,15 @@
 class Wizard {
-  constructor(wizardInstance) {
-    this.name = wizardInstance.name;
+  constructor(wizardObjectInstance) {
+    // this.name = wizardInstance['name'];
+    this.name = wizardObjectInstance.name;
 
-    /* expected undefined to equal true for bearded...but it can equal false, use ternary operator */
-    this.bearded = wizardInstance.bearded === undefined ? true : false;
+    this.bearded = true;
+
+    // this.bearded = wizardInstance.bearded === undefined ? true : false;
+
+    if (wizardObjectInstance.bearded === false) {
+      this.bearded = false;
+    }
 
     this.isRested = true;
 
