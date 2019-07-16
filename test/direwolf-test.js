@@ -83,7 +83,7 @@ describe('Direwolf', () => {
     assert.equal(direwolf.starksToProtect[0].name, 'Arya');
   });
 
-  it.skip('should only be able to protect a Stark if direwolf and Stark locations match', () => {
+  it('should only be able to protect a Stark if direwolf and Stark locations match', () => {
     const direwolf = new Direwolf('Ghost');
     const stark = new Stark('John', "King's Landing");
 
@@ -92,7 +92,7 @@ describe('Direwolf', () => {
     assert.deepEqual(direwolf.starksToProtect, []);
   });
 
-  it.skip('should only be able to protect two Starks at a time', () => {
+  it('should only be able to protect two Starks at a time', () => {
     const direwolf1 = new Direwolf('Summer', 'Winterfell');
     const direwolf2 = new Direwolf('Lady', 'Winterfell');
     const stark1 = new Stark('Sansa');
@@ -116,14 +116,14 @@ describe('Direwolf', () => {
     assert.equal(direwolf2.starksToProtect[1].name, 'Bran');
   });
 
-  it.skip('Stark should start off unsafe', () => {
+  it('Stark should start off unsafe', () => {
     const stark = new Stark('John', 'Winterfell');
 
     assert.equal(stark.safe, false);
     assert.equal(stark.houseWords(), 'Winter is Coming');
   });
 
-  it.skip('should change house words once protected', () => {
+  it('should change house words once protected', () => {
     const direwolf = new Direwolf('Nymeria', 'Dorn');
     const stark1 = new Stark('Arya', 'Dorn');
     const stark2 = new Stark('Sansa', 'Dorn');
@@ -139,7 +139,7 @@ describe('Direwolf', () => {
     assert.equal(stark2.houseWords(), 'Winter is Coming');
   });
 
-  it.skip('should hunt white walkers when not protecting Starks', () => {
+  it('should hunt white walkers when not protecting Starks', () => {
     const direwolf = new Direwolf('Nymeria', 'Winterfell');
     const stark = new Stark('Sansa');
 
@@ -149,7 +149,7 @@ describe('Direwolf', () => {
     assert.equal(direwolf.huntsWhiteWalkers, false);
   });
 
-  it.skip('should be able to stop protecting Starks', () => {
+  it('should be able to stop protecting Starks', () => {
     const direwolf1 = new Direwolf('Summer', 'Winterfell');
     const direwolf2 = new Direwolf('Lady', 'Winterfell');
     const stark1 = new Stark('Sansa');
