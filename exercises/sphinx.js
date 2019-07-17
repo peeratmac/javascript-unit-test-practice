@@ -18,8 +18,7 @@ class Sphinx {
     if (correctAnswer === undefined) {
       this.heroesEaten++;
       return;
-    }
-    if (correctAnswer === guess) {
+    } else if (correctAnswer.answer === guess) {
       this.riddles.pop();
       return "That wasn't that hard, I bet you don't get the next one";
     }

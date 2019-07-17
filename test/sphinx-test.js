@@ -92,8 +92,8 @@ describe('Sphinx', () => {
     sphinx.collectRiddle(riddle2);
     sphinx.collectRiddle(riddle3);
     sphinx.attemptAnswer('An envelope');
-
     assert.deepEqual(sphinx.riddles, [riddle1, riddle2]);
+    // only 2 objects in the array is correct, with correct guess, we pop the last object out of the array.
   });
 
   it('should mock heroes when they get the answer right', () => {
@@ -123,7 +123,7 @@ describe('Sphinx', () => {
     assert.equal(sphinx.heroesEaten, 0);
   });
 
-  it.only("should eat the hero if their answer isn't correct for any riddles", () => {
+  it("should eat the hero if their answer isn't correct for any riddles", () => {
     const sphinx = new Sphinx();
     const riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?',
