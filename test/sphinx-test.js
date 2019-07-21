@@ -180,15 +180,27 @@ describe('Sphinx', () => {
       riddle: 'How far can a fox run into a grove?',
       answer: "Halfway, after that it's running out."
     };
+    const riddle3 = {
+      riddle: 'TEST ASKING FOR MORE QUESTIONS TEST TEST TEST?',
+      answer: 'How are you doing...'
+    };
 
     sphinx.collectRiddle(riddle1);
     sphinx.collectRiddle(riddle2);
+    sphinx.collectRiddle(riddle3);
     sphinx.attemptAnswer("Halfway, after that it's running out.");
     const rage = sphinx.attemptAnswer('short');
 
+    // assert.equal(
+    //   rage,
+    //   'PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS "short"???'
+    // );
+
+    const rage2 = sphinx.attemptAnswer('How are you doing...');
+
     assert.equal(
-      rage,
-      'PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS "short"???'
+      rage2,
+      'PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS "How are you doing..."???'
     );
   });
 });

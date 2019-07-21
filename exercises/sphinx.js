@@ -18,10 +18,14 @@ class Sphinx {
     if (correctAnswer === undefined) {
       this.heroesEaten++;
       return;
-    } else if (correctAnswer.answer === guess) {
-      this.riddles.pop();
-      return "That wasn't that hard, I bet you don't get the next one";
     }
+
+    var firstMatch = this.riddles.indexOf(correctAnswer);
+    this.riddles.splice(firstMatch, 1);
+    if (this.riddles.length === 0) {
+      return `PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS "${guess}"???`;
+    }
+    return "That wasn't that hard, I bet you don't get the next one";
   }
 }
 
