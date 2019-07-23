@@ -22,6 +22,7 @@ class Sphinx {
 
     var firstMatch = this.riddles.indexOf(correctAnswer);
     this.riddles.splice(firstMatch, 1);
+
     if (this.riddles.length === 0) {
       return `PSSSSSSS THIS HAS NEVER HAPPENED, HOW DID YOU KNOW THE ANSWER WAS "${guess}"???`;
     }
@@ -30,3 +31,11 @@ class Sphinx {
 }
 
 module.exports = Sphinx;
+
+// This can work for part of attempt answer
+
+// for (var i = 0; i < this.riddles.length; i++) {
+//   if (guess === this.riddles[i].answer) {
+//     this.riddles.splice(i, 1);
+//   }
+// }
